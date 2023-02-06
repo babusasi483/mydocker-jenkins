@@ -11,5 +11,5 @@ copy index.html /var/www/html/
 # start the apache2 service in the foreground
 # ENTRYPOINT ["/user/sbin/apache2", "-k", "start"]
 EXPOSE 80
-CMD ["apachectl","-D","FOREGROUND"]
+cmd ["/usr/sbin/apachectl","-d","foreground"]
 
