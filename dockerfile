@@ -4,8 +4,7 @@ from ubuntu
 # update the package list and install apache2
 run apt-get update -y && \
     apt-get install apache2 -y
-    apt get-clean
-
+ 
 # copy the index.html file to the apache root directory
 copy index.html /var/www/html/
 
