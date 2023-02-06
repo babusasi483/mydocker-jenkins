@@ -9,5 +9,5 @@ run apt-get update -y && \
 copy index.html /var/www/html/
 
 # start the apache2 service in the foreground
-cmd ["/user/sbin/apachectl", "-d", "foreground"]
+ENTRYPOINT ["/user/sbin/httpd", "-D", "FOREGROUND"]
 
