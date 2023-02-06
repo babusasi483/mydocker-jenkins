@@ -4,10 +4,13 @@ from ubuntu
 # update the package list and install apache2
 run apt-get update -y && \
     apt-get install apache2 -y
+    apt get-clean
 
 # copy the index.html file to the apache root directory
 copy index.html /var/www/html/
 
 # start the apache2 service in the foreground
-ENTRYPOINT ["/user/sbin/httpd", "-D", "FOREGROUND"]
+# ENTRYPOINT ["/user/sbin/apache2", "-k", "start"]
+EXPOSE 80
+CMD ["apachectl","-D","FOREGROUND"]
 
